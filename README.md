@@ -41,25 +41,25 @@ Here `default.package` is defined in :
 </properties>
 ``` 
 5.  Add another plugin to the `pom.xml` file and This plugin will add the generated source to the project so that project can use the generated code:
-    ```
-				<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-source</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.build.directory}/generated-sources/main/java/</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-	```
+```
+<plugin>
+<groupId>org.codehaus.mojo</groupId>
+<artifactId>build-helper-maven-plugin</artifactId>
+<executions>
+	<execution>
+		<id>add-source</id>
+		<phase>generate-sources</phase>
+		<goals>
+			<goal>add-source</goal>
+		</goals>
+		<configuration>
+			<sources>
+				<source>${project.build.directory}/generated-sources/main/java/</source>
+			</sources>
+		</configuration>
+	</execution>
+</executions>
+</plugin>
+```
 
 That's all enjoy.
